@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    <h2>Customers</h2>
+    <input id="TxtCountry" type="text" /><input id="BtnSearch" type="button" value="Search" />
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Company Name</th>
+                <th>Contact Name</th>
+                <th>Contact Title</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Region</th>
+                <th>Postal Code</th>
+                <th>Country</th>
+                <th>Phone</th>
+                <th>Fax</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var customer in Model.Customers)
+            {
+                <tr>
+                    <td>@customer.CustomerID</td>
+                    <td>@customer.CompanyName</td>
+                    <td>@customer.ContactName</td>
+                    <td>@customer.ContactTitle</td>
+                    <td>@customer.Address</td>
+                    <td>@customer.City</td>
+                    <td>@customer.Region</td>
+                    <td>@customer.PostalCode</td>
+                    <td>@customer.Country</td>
+                    <td>@customer.Phone</td>
+                    <td>@customer.Fax</td>
+                </tr>
+            }
+        </tbody>
+</div>
